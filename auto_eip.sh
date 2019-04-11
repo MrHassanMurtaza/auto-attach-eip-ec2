@@ -1,10 +1,3 @@
-# :package: auto-attach-eip-ec2
-Auto attach EIP to EC2 in case of scale up or scale down event. It is usually required when you whitelisted EIP of ec2 for customwe and you want to use it again and again rather than whitelisting or giving new ip everytime.
-
-#→ Configurations
-You just need to use this script in "user data" of your launch configurations.
-
-```
 #!/bin/bash
 # auto assign ip
 
@@ -19,9 +12,4 @@ aws configure set region <region_of_instance>
 INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
 ALLOCATION_ID=<EIP_ALLOC_ID>
 aws ec2 associate-address --instance-id $INSTANCE_ID --allocation-id $ALLOCATION_ID --allow-reassociation
-```
 
-# License
-Licensed Under GPL 2.0.
-
- 
