@@ -1,7 +1,7 @@
 # :package: auto-attach-eip-ec2
 Auto attach EIP to EC2 in case of scale up or scale down event. It is usually required when you whitelisted EIP of ec2 for customwe and you want to use it again and again rather than whitelisting or giving new ip everytime.
 
-# → Configurations
+## → Configurations
 You just need to use this script in "user data" of your launch configurations.
 
 ```
